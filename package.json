@@ -1,0 +1,40 @@
+{
+  "name": "zhdk-bits-atoms-3-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "netlify": "npm run examples && npm run generate && npm run zips",
+    "generate": "generate-md --layout github --input ./markdown --output ./public",
+    "examples": "node generate-examples.js",
+    "zips": "node archiver.js",
+    "lint:js": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint:js --fix",
+    "dev": "yarn server",
+    "server": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jones-S/zhdk-bits-atoms-3-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jones-S/zhdk-bits-atoms-3-2021/issues"
+  },
+  "homepage": "https://github.com/Jones-S/zhdk-bits-atoms-3-2021#readme",
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "eslint": "^8.25.0",
+    "markdown-styles": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
+  }
+}

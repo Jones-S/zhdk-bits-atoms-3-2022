@@ -1,0 +1,12 @@
+# dependencies
+node_modules
+public/*
+!public/downloads
+!public/examples
+!public/examples-unreleased
+
+# logs
+npm-debug.log
+
+# generated
+markdown/examples.md
