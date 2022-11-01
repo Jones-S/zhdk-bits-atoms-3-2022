@@ -4,5 +4,6 @@ function setup() {
 
 function draw() {
   background(220);
-  rect(30, 20, 55, 55);
+  rect(70, 20, 55, 55);
+  describe('its a rectangle');
 }

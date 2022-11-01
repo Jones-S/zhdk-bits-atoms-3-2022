@@ -1,0 +1,18 @@
+body {
+    padding: 0;
+    margin: 50px;
+}
+
+h4 {
+    color: #464646;
+}
+
+p {
+    color: #464646;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #9e2dce;
+}

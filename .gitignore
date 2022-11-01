@@ -10,3 +10,6 @@ npm-debug.log
 
 # generated
 markdown/examples.md
+
+# all geojsons (very large files) in that specific data folder
+public/examples/p5_Examples/geotiff_2D/data/*.geojson
