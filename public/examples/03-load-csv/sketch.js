@@ -27,7 +27,7 @@ function draw() {
 }
 
 function onComplete(table) {
-  console.log('Successfully loaded CSV file 🤓 dfghjk: ', table);
+  console.log('Successfully loaded CSV file 🤓: ', table);
 }
 
 function onError(response) {

@@ -1,0 +1,578 @@
+Microsoft Windows [Version 10.0.19042.2006]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd C:\Users\user\Desktop\touchtable-infrared-tracker-master
+
+C:\Users\user\Desktop\touchtable-infrared-tracker-master>winget install -e --id EclipseAdoptium.Temurin.17.JDK
+The `msstore` source requires that you view the following agreements before using.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. "US").
+
+Do you agree to all the source agreements terms?
+[Y] Yes  [N] No: y
+Found Eclipse Temurin JDK with Hotspot 17 [EclipseAdoptium.Temurin.17.JDK] Version 17.0.4.101
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4.1%2B1/OpenJDK17U-jdk_x64_windows_hotspot_17.0.4.1_1.msi
+  ██████████████████████████████   161 MB /  161 MB
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+
+C:\Users\user\Desktop\touchtable-infrared-tracker-master>gradlew.bat run
+Downloading https://services.gradle.org/distributions/gradle-7.4.1-bin.zip
+...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%
+
+Welcome to Gradle 7.4.1!
+
+Here are the highlights of this release:
+ - Aggregated test and JaCoCo reports
+ - Marking additional test source directories as tests in IntelliJ
+ - Support for Adoptium JDKs in Java toolchains
+
+For more details see https://docs.gradle.org/7.4.1/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :
+Project : => no module-info.java found
+
+> Task :compileKotlin
+'compileJava' task (current target is 11) and 'compileKotlin' task (current target is 1.8) jvm target compatibility should be set to the same Java version.
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\TrackingApplication.kt: (194, 38): Parameter 'width' is never used
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\TrackingApplication.kt: (194, 50): Parameter 'height' is never used
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\javacv\JavaCVConvertExtensions.kt: (106, 9): Name shadowed: frame
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\javacv\JavaCVMatExtensions.kt: (62, 5): Parameter 'thresh' is never used
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\javacv\JavaCVMatExtensions.kt: (102, 38): Parameter 'connectivity' is never used
+w: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\kotlin\ch\zhdk\tracking\javacv\JavaCVMatExtensions.kt: (102, 61): Parameter 'ltype' is never used
+
+> Task :compileJava
+Note: C:\Users\user\Desktop\touchtable-infrared-tracker-master\src\main\java\org\bytedeco\javacv\RealSense2FrameGrabber.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :run
+22/11/03 13:23:42 INFO ktor.application: No ktor.deployment.watch patterns specified, automatic reload is not active
+22/11/03 13:23:42 INFO ktor.application: Responding at http://0.0.0.0:7000
+starting OSC on  /127.0.0.1:8002
+[RS] enable second stream
+config saved!
+Could not set Auto White Balance: rs_error was raised when calling rs2_set_option(options:0000021B8419E8E0, option:Enable Auto White Balance, value:1):
+hr returned: HResult 0x800706be: "The remote procedure call failed."
+Error: rs_error was raised when calling rs2_set_option(options:0000021B8419E8E0, option:Enable Auto White Balance, value:1):
+
+hr returned: HResult 0x800706be: "The remote procedure call failed."
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_set_option(options:0000021B8419E8E0, option:Enable Auto White Balance, value:1):
+hr returned: HResult 0x800706be: "The remote procedure call failed."
+
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.setSensorOption(RealSense2FrameGrabber.java:381)
+kotlin.Unit
+        at org.bytedeco.javacv.RealSense2FrameGrabber.setSensorOption(RealSense2FrameGrabber.java:376)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:73)
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+could not start BLE service
++ adding object: 1
+[RS] enable second stream
+Error: rs_error was raised when calling rs2_create_device(info_list:0000021AF51D87E0, index:0):
+MFCreateDeviceSource(_device_attrs, &_source) returned: HResult 0x0: "The operation completed successfully."
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_create_device(info_list:0000021AF51D87E0, index:0):
+
+MFCreateDeviceSource(_device_attrs, &_source) returned: HResult 0x0: "The operation completed successfully."
+kotlin.Unit
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.createDevice(RealSense2FrameGrabber.java:418)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.open(RealSense2FrameGrabber.java:153)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:48)
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+[RS] enable second stream
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:0000021B84DB8F30, config:0000021B84DB90F0):
+
+Error: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:0000021B84DB8F30, config:0000021B84DB90F0):
+
+Failed to resolve the request:
+        Format: BGR8, width: 848, height: 480
+Failed to resolve the request:
+        Format: BGR8, width: 848, height: 480
+        Format: Y8, width: 848, height: 480
+
+        Format: Y8, width: 848, height: 480
+Into:
+        Formats:
+
+Into:
+         Y8I
+         UYVY
+        Formats:
+
+
+         Y8I
+
+         UYVY
+
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.start(RealSense2FrameGrabber.java:191)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:75)
+kotlin.Unit
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+[ WARN:1@1207.978] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (464) `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: -2147024809
+[ WARN:1@1207.978] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (476) `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -2147024809
+[ WARN:2@1207.978] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.078] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.179] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.279] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.379] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.479] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.579] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.679] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.780] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.880] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1208.980] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.081] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.182] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.282] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.383] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.483] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.583] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.684] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.785] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.885] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1209.986] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.086] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.187] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.287] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.387] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.487] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.588] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.689] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.789] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.890] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1210.991] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.091] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.192] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.292] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.392] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.492] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.592] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.693] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.793] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.893] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1211.994] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.094] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.194] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.294] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.394] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.495] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.595] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.697] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.797] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.897] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1212.998] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.098] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.199] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.299] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.400] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.500] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.600] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.701] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.801] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1213.901] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.001] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.101] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.202] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.303] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.403] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.504] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.604] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.704] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.804] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1214.904] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.004] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.104] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.204] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.304] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.404] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.504] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.605] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.706] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.806] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1215.907] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.007] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.107] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.207] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.308] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.408] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.508] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.609] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.709] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.810] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1216.910] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.011] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.111] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.212] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.312] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.412] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.513] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.613] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.713] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.814] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1217.915] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:2@1218.016] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+Error: read() Error: Could not read frame in start().
+org.bytedeco.javacv.FrameGrabber$Exception: read() Error: Could not read frame in start().
+        at org.bytedeco.javacv.OpenCVFrameGrabber.start(OpenCVFrameGrabber.java:265)
+        at ch.zhdk.tracking.io.CameraInputProvider.open(CameraInputProvider.kt:18)
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+kotlin.Unit
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+<==========---> 83% EXECUTING [44m 26s]
+<==========---> 83% EXECUTING [44m 28s]
+> IDLE
+> IDLE
+> IDLE
+> IDLE
+> IDLE
+> IDLE
+> :run
+> IDLE
+> IDLE
+> IDLE
+> IDLE
+exit
+Terminate batch job (Y/N)? y
+
+C:\Users\user\Desktop\touchtable-infrared-tracker-master>gradlew.bat run
+
+> Configure project :
+Project : => no module-info.java found
+
+> Task :run
+22/11/03 14:07:48 INFO ktor.application: No ktor.deployment.watch patterns specified, automatic reload is not active
+22/11/03 14:07:48 INFO ktor.application: Responding at http://0.0.0.0:7000
+starting OSC on  /127.0.0.1:8002
+Error: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:00000218ED624B50, config:00000218ED624970):
+Couldn't resolve requests
+
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:00000218ED624B50, config:00000218ED624970):
+Couldn't resolve requests
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.start(RealSense2FrameGrabber.java:191)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:75)
+kotlin.Unit
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+[ WARN:0@25.234] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (464) `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: -2147024809
+[ WARN:0@25.234] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (476) `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -2147024809
+[ WARN:1@25.234] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.335] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.435] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.535] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.635] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.736] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.836] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@25.936] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.036] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.137] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.237] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.337] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.437] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.538] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.638] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.739] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.839] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@26.940] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+[ WARN:1@27.040] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (1752) CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -2147024809
+video size: 1280x720
+video framerate: 30.0
+could not start BLE service
++ adding object: 1
++ adding object: 9
++ adding object: 11
++ adding object: 12
++ adding object: 13
++ adding object: 14
+Websocket Error: Packet is too large for the buffer in use
+Websocket Error: Packet is too large for the buffer in use
++ adding object: 23
++ adding object: 27
++ adding object: 30
++ adding object: 37
++ adding object: 40
+- removing object: 27
+[ WARN:3@65.432] global D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\videoio\src\cap_msmf.cpp (539) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+- removing object: 30
+- removing object: 9
++ adding object: 42
++ adding object: 48
++ adding object: 49
+- removing object: 42
++ adding object: 50
++ adding object: 51
+- removing object: 48
+- removing object: 49
++ adding object: 54
++ adding object: 55
+- removing object: 14
++ adding object: 56
+- removing object: 37
++ adding object: 57
+- removing object: 54
++ adding object: 58
+- removing object: 57
++ adding object: 59
+- removing object: 55
++ adding object: 60
++ adding object: 61
+- removing object: 61
++ adding object: 64
++ adding object: 70obal D:\a\javacpp-presets\javacpp-presets\opencv\cppbuild\windows-x86_64\opencv-4.5.5\modules\v
++ adding object: 71
+- removing object: 50
++ adding object: 73
++ adding object: 75
+- removing object: 1
+- removing object: 11
+- removing object: 58
+- removing object: 70
+- removing object: 71
++ adding object: 76
++ adding object: 77
++ adding object: 78
++ adding object: 79
++ adding object: 80
++ adding object: 81
++ adding object: 82
++ adding object: 83
++ adding object: 84
++ adding object: 85
++ adding object: 87
++ adding object: 88
++ adding object: 89
++ adding object: 91
++ adding object: 92
++ adding object: 93
++ adding object: 95
++ adding object: 96
+- removing object: 12
+- removing object: 60
+- removing object: 23
+- removing object: 51XECUTING [7m 1s]
+- removing object: 73
++ adding object: 98
++ adding object: 99
++ adding object: 100
+- removing object: 83
++ adding object: 101
+- removing object: 56
+- removing object: 100
+- removing object: 40
+- removing object: 59
+- removing object: 78
+- removing object: 82
+- removing object: 87
++ adding object: 102
++ adding object: 104
++ adding object: 105
++ adding object: 106
++ adding object: 108
+- removing object: 85
++ adding object: 111
++ adding object: 112
++ adding object: 113
+- removing object: 80
+- removing object: 81
+- removing object: 91
++ adding object: 116
++ adding object: 117
++ adding object: 118
++ adding object: 119
++ adding object: 122
+- removing object: 95
+- removing object: 64
+- removing object: 76
+- removing object: 77XECUTING [7m 1s]
+- removing object: 79
+- removing object: 84
+- removing object: 88
+- removing object: 89
+- removing object: 92
+- removing object: 96
+- removing object: 99
+- removing object: 101
+- removing object: 98
+- removing object: 104
+- removing object: 112
++ adding object: 126
++ adding object: 127
+- removing object: 75
+- removing object: 113
+- removing object: 117
+- removing object: 118
+- removing object: 119
+- removing object: 105
+- removing object: 126
+- removing object: 108
++ adding object: 129
++ adding object: 130
+- removing object: 111
++ adding object: 134
++ adding object: 135
+- removing object: 129
++ adding object: 137
++ adding object: 138
+- removing object: 134
+- removing object: 135
++ adding object: 139
++ adding object: 140
+- removing object: 93
++ adding object: 142
+- removing object: 140
++ adding object: 143
+- removing object: 142
++ adding object: 144
+- removing object: 139
++ adding object: 145
++ adding object: 146
+- removing object: 146
++ adding object: 149
++ adding object: 154
++ adding object: 155
+- removing object: 137
++ adding object: 157
++ adding object: 159
+- removing object: 102
+- removing object: 106ECUTING [7m 1s]
+- removing object: 143
+- removing object: 154
+- removing object: 155
++ adding object: 160
++ adding object: 161
++ adding object: 162
++ adding object: 163
++ adding object: 164
++ adding object: 165
++ adding object: 166
++ adding object: 167
++ adding object: 168
++ adding object: 169
++ adding object: 171
++ adding object: 172EXECUTING [7m 1s]
++ adding object: 173
++ adding object: 175
++ adding object: 176
++ adding object: 177
++ adding object: 179
++ adding object: 180
+- removing object: 127
+- removing object: 145
+- removing object: 130
+- removing object: 138
+- removing object: 157
++ adding object: 182
++ adding object: 183
++ adding object: 184
+- removing object: 163
++ adding object: 185
+- removing object: 116
+- removing object: 184
+- removing object: 122
+- removing object: 144
+- removing object: 164
+- removing object: 166
+- removing object: 171ECUTING [7m 1s]
++ adding object: 186
++ adding object: 189
++ adding object: 191
++ adding object: 192
+- removing object: 169
++ adding object: 195
++ adding object: 196
++ adding object: 197
+- removing object: 160
+- removing object: 161
+- removing object: 175
++ adding object: 201
++ adding object: 202
++ adding object: 203
++ adding object: 204
++ adding object: 206
+- removing object: 179
+- removing object: 167
++ adding object: 209
++ adding object: 210
+- removing object: 149
+- removing object: 162
+- removing object: 165
+- removing object: 168
+- removing object: 172ECUTING [7m 1s]
+- removing object: 173
+- removing object: 176
+- removing object: 180
+- removing object: 182
+- removing object: 183
+- removing object: 185
+- removing object: 196
++ adding object: 211
+- removing object: 159
+- removing object: 197
+- removing object: 201
+- removing object: 202
+- removing object: 203
+- removing object: 189
+- removing object: 210
++ adding object: 213
+- removing object: 195
++ adding object: 214
+- removing object: 192
++ adding object: 218
+- removing object: 209
+Error: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:000002199850E350, config:000002199850E750):
+Couldn't resolve requests
+
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:000002199850E350, config:000002199850E750):
+Couldn't resolve requests
+
+kotlin.Unit
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.start(RealSense2FrameGrabber.java:191)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:75)
+        at ch.zhdk.tracking.pipeline.Pipeline.start(Pipeline.kt:101)
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+        at ch.zhdk.tracking.Main.startApplication(Main.kt:38)
+        at ch.zhdk.tracking.Main$Companion.main(Main.kt:15)
+        at ch.zhdk.tracking.Main.main(Main.kt)
+org.bytedeco.javacv.FrameGrabber$Exception: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:000002198BD9D3C0, config:000002198BD9D860):
+Error: rs_error was raised when calling rs2_pipeline_start_with_config(pipe:000002198BD9D3C0, config:000002198BD9D860):
+Couldn't resolve requests
+
+Couldn't resolve requests
+kotlin.Unit
+
+        at org.bytedeco.javacv.RealSense2FrameGrabber.checkError(RealSense2FrameGrabber.java:550)
+        at org.bytedeco.javacv.RealSense2FrameGrabber.start(RealSense2FrameGrabber.java:191)
+        at ch.zhdk.tracking.io.RealSense2InputProvider.open(RealSense2InputProvider.kt:75)
+<==========---> 83% EXECUTING [10m 29s]
+        at ch.zhdk.tracking.TrackingApplication.start(TrackingApplication.kt:114)
+<

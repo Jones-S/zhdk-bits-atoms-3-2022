@@ -2,8 +2,14 @@
 
 ## Run
 
-```
+```bash
 $ nvm use
 $ yarn
 $ yarn serve
+```
+
+```bash
+# generate zip files from examples
+$ yarn zips
+
 ```

@@ -1,0 +1,260 @@
+{
+  "input": {
+    "inputProvider": {
+      "value": "RealSense2"
+    },
+    "webCamDeviceIndex": {
+      "value": 0
+    },
+    "webCamWidth": {
+      "value": 1280
+    },
+    "webCamHeight": {
+      "value": 720
+    },
+    "realSenseDeviceIndex": {
+      "value": 0
+    },
+    "realSenseWidth": {
+      "value": 1280
+    },
+    "realSenseHeight": {
+      "value": 720
+    },
+    "realSenseFrameRate": {
+      "value": 30
+    },
+    "enableRGBIRStream": {
+      "value": false
+    },
+    "enableDualIR": {
+      "value": false
+    },
+    "displaySecondIRStream": {
+      "value": false
+    },
+    "enableAutoWhiteBalance": {
+      "value": false
+    },
+    "enableAutoExposure": {
+      "value": false
+    },
+    "autoExposure": {
+      "value": 14500.0
+    },
+    "enableIREmitter": {
+      "value": false
+    }
+  },
+  "pipeline": {
+    "calibration": {
+      "calibrationEnabled": {
+        "value": true
+      },
+      "displayAnnotation": {
+        "value": true
+      },
+      "perspectiveTransform": {
+        "value": true
+      },
+      "topLeft": {
+        "value": {
+          "x": 0.221875,
+          "y": 0.32083333
+        }
+      },
+      "topRight": {
+        "value": {
+          "x": 0.83515626,
+          "y": 0.3402778
+        }
+      },
+      "bottomRight": {
+        "value": {
+          "x": 0.8234375,
+          "y": 0.9638889
+        }
+      },
+      "bottomLeft": {
+        "value": {
+          "x": 0.20546874,
+          "y": 0.9305556
+        }
+      },
+      "calibrationMat": {
+        "value": {
+          "x": {
+            "x": 1.6655662,
+            "y": -0.052374773,
+            "z": 0.035963714
+          },
+          "y": {
+            "x": 0.044816636,
+            "y": 1.6519078,
+            "z": 0.014193578
+          },
+          "z": {
+            "x": -0.38392618,
+            "y": -0.51836646,
+            "z": 0.98746693
+          }
+        }
+      }
+    },
+    "pipelineType": {
+      "value": "Simple"
+    },
+    "annotateOutput": {
+      "value": true
+    },
+    "displayOutput": {
+      "value": true
+    },
+    "enablePreProcessing": {
+      "value": true
+    },
+    "gammaCorrection": {
+      "value": 0.9400000000000001
+    },
+    "hueRange": {
+      "value": {
+        "low": 90.0,
+        "high": 150.0
+      }
+    },
+    "saturationRange": {
+      "value": {
+        "low": 55.0,
+        "high": 100.0
+      }
+    },
+    "valueRange": {
+      "value": {
+        "low": 0.0,
+        "high": 255.0
+      }
+    },
+    "binarizationMethod": {
+      "value": "Adaptive"
+    },
+    "threshold": {
+      "value": 54.25
+    },
+    "adaptiveness": {
+      "value": -1.4199999999999982
+    },
+    "morphologyFilterEnabled": {
+      "value": false
+    },
+    "erodeSize": {
+      "value": 1
+    },
+    "dilateSize": {
+      "value": 1
+    },
+    "detectSimpleOrientation": {
+      "value": true
+    },
+    "minAreaSize": {
+      "value": 5.0
+    },
+    "markerMaxDelta": {
+      "value": 101.0
+    },
+    "minDetectedTime": {
+      "value": 250
+    },
+    "maxMissingTime": {
+      "value": 250
+    },
+    "smoothPosition": {
+      "value": true
+    },
+    "minimumCutoffFrequencyPosition": {
+      "value": 2.0
+    },
+    "speedCoefficientPosition": {
+      "value": 5.0
+    },
+    "smoothAngle": {
+      "value": true
+    },
+    "minimumCutoffFrequencyAngle": {
+      "value": 2.0
+    },
+    "speedCoefficientAngle": {
+      "value": 5.0
+    },
+    "maximumRadius": {
+      "value": 20.0
+    },
+    "deviceMaxDelta": {
+      "value": 68.0
+    },
+    "identificationEnabled": {
+      "value": true
+    },
+    "bleConfig": {
+      "port": {
+        "value": "COM3"
+      },
+      "baudRate": {
+        "value": "B115200"
+      },
+      "scanInterval": {
+        "value": 10
+      },
+      "scanTime": {
+        "value": 2
+      },
+      "mapInterval": {
+        "value": 100
+      },
+      "verboseLogging": {
+        "value": false
+      }
+    },
+    "sampleCount": {
+      "value": 60
+    },
+    "thresholdMarginFactor": {
+      "value": 1.0
+    }
+  },
+  "output": {
+    "osc": {
+      "oscAddress": {
+        "value": "127.0.0.1"
+      },
+      "oscPort": {
+        "value": 8002
+      },
+      "nameSpace": {
+        "value": "/tracker"
+      },
+      "updateFrequency": {
+        "value": 60
+      },
+      "useOSCBundles": {
+        "value": false
+      },
+      "debugOSC": {
+        "value": false
+      }
+    },
+    "webSocket": {
+      "port": {
+        "value": 7000
+      }
+    }
+  },
+  "productionMode": {
+    "value": false
+  },
+  "displayProcessed": {
+    "value": false
+  },
+  "previewSize": {
+    "value": "HDReady"
+  }
+}

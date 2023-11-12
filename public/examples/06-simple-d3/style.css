@@ -1,0 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.axis {
+  stroke: #E90B3C;
+  stroke-width: 3px;
+}

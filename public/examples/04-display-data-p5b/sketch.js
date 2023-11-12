@@ -3,9 +3,11 @@ console.log('Loading data...');
 let table;
 
 const canvasWidth = window.innerWidth;
-const canvasHeight = 6000; // ⚠️ size limit if too long
+const canvasHeight = 6000;
 const xPosAxis1 = 20; // px
 const xPosAxis2 = 500; // px
+const barMargin = 10;
+const barHeight = 30;
 
 // https://p5js.org/reference/#/p5/loadTable
 function preload() {
@@ -14,9 +16,6 @@ function preload() {
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
-
-  const barMargin = 10;
-  const barHeight = 30;
 
   // count the columns
   print(table.getRowCount() + ' total rows in table');
@@ -28,19 +27,40 @@ function setup() {
     const meanTemp = table.get(i, 'Annual_Mean_Temperature');
     const futureMeanTemp = table.get(i, 'future_Annual_Mean_Temperature');
 
-    position = convertDegreesToPosition(meanTemp);
-    drawTempToday(position);
-    drawLabelToday(position, city, meanTemp);
+    const yPosition = convertDegreesToPosition(meanTemp);
+    const xPosition = xPosAxis1;
+    drawTemperature(xPosition, yPosition);
+    drawLabelToday(yPosition, city, meanTemp);
 
-    futurePosition = convertDegreesToPosition(futureMeanTemp);
-    drawTempFuture(futurePosition);
-    drawLabelFuture(futurePosition, city, futureMeanTemp);
+    drawLabel(yPosition, city, meanTemp, xPosition);
+    drawLabel(xPosition, yPosition, city, meanTemp);
 
-    drawConnectingLine(position, futurePosition);
+    const futureYPosition = convertDegreesToPosition(futureMeanTemp);
+    const futureXPosition = xPosAxis2;
+    drawTemperature(futureXPosition, futureYPosition);
+    drawLabelFuture(futureYPosition, city, futureMeanTemp);
+
+    drawLabel(futureXPosition, futureYPosition, city, meanTemp);
+
+    const labelOptions = { xPos: 12, yPos: 300, city: 'Zürich', temp: 30 };
+    drawLabel(labelOptions);
+
+    drawLabel({ xPos: 12, yPos: 300, temp: 30, city: 'Zürich' });
+
+    drawConnectingLine(yPosition, futureYPosition);
   }
 
   // drawAxes();
   // drawAxesLabels();
+}
+
+function drawLabel(options) {
+  const yPosition = options.yPos;
+  const cityName = options.city;
+
+  fill('black');
+  const label = `${city}: ${temp}°C`;
+  text(label, xPos + 10, yPos + 5);
 }
 
 function convertDegreesToPosition(temp) {
@@ -51,29 +71,47 @@ function convertDegreesToPosition(temp) {
   return position;
 }
 
-// the two temp drawing functions could also be combined into a single function
-// adding the x-position as a new parameter. For simplicity we have two functions
-function drawTempToday(pos) {
+function drawTemperature(x, y) {
   fill('black');
-  circle(xPosAxis1, pos, 10);
+  circle(x, y, 10);
 }
 
-function drawTempFuture(pos) {
-  fill('black');
-  circle(xPosAxis2, pos, 10);
-}
-
+// Task: Can you combine the two functions
+// "drawLabelToday" and "drawLabelFuture"
+// into one, using a fourth parameter?
 function drawLabelToday(pos, city, temp) {
   fill('black');
   const label = `${city}: ${temp}°C`;
   text(label, xPosAxis1 + 10, pos + 5);
 }
 
-function drawLabelFuture(pos, city, temp) {
-  fill('black');
-  const label = `${city}: ${temp}°C`;
-  text(label, xPosAxis2 + 10, pos + 5);
-}
+// function drawLabelFuture(pos, city, temp, isFuture) {
+//   fill('black');
+//   const label = `${city}: ${temp}°C`;
+
+//   if (isFuture) {
+//     text(label, xPosAxis2 + 10, pos + 5);
+//   } else {
+//     text(label, xPosAxis1 + 10, pos + 5);
+//   }
+// }
+
+// function drawLabel(city, pos, temp, isFuture) {
+//   fill('black');
+//   const label = `${city}: ${temp}°C`;
+
+//   // let xPosition;
+
+//   // if (isFuture) {
+//   //   xPosition = xPosAxis2;
+//   // } else {
+//   //   xPosition = xPosAxis1;
+//   // }
+
+//   const xPosition = isFuture ? xPosAxis1 : xPosAxis2;
+
+//   text(label, xPosition + 10, pos + 5);
+// }
 
 function drawConnectingLine(y1, y2) {
   line(xPosAxis1, y1, xPosAxis2, y2);
